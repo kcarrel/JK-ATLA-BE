@@ -1,7 +1,8 @@
 class TweetsController < ApplicationController
 
   def tweet
-    @tweet = Tweet.tweet(message: params)
+    @tweet = Tweet.create(message: params[:message])
+    render :json => @tweet
   end
 
 end
